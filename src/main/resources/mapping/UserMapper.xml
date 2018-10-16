@@ -39,13 +39,13 @@
         UPDATE t_user
         <set>
             <if test="userName != null">
-                user_name = #{userName, jdbcType=VARCHAR}
+                user_name = #{userName, jdbcType=VARCHAR},
             </if>
             <if test="password != null">
-                pass_word = #{password, jdbcType=VARCHAR}
+                pass_word = #{password, jdbcType=VARCHAR},
             </if>
             <if test="phone != null">
-                phone = #{phone, jdbcType=VARCHAR}
+                phone = #{phone, jdbcType=VARCHAR},
             </if>
         </set>
         WHERE user_id = #{userId, jdbcType=INTEGER}
