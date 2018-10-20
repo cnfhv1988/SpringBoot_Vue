@@ -3,6 +3,8 @@ package cn.machao.persist.service.impl;
 import cn.machao.persist.mapper.UserMapper;
 import cn.machao.persist.model.User;
 import cn.machao.persist.service.UserService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +22,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAllUsers() {
-        return userMapper.getAllUsers();
+    public PageInfo<User> findAllUsers(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<User> users = userMapper.getAllUsers();
+        PageInfo<User> pageInfo = new PageInfo<>(users);
+        return pageInfo;
     }
 
     @Override

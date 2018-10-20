@@ -7,6 +7,8 @@ public class Constant {
 
     public static final int RESPONSE_SUCCESS = 200;
     public static final int RESPONSE_ERROR = 400;
-    public static final int RESPONSE_INTERNAL_SERVER_ERROR = 400;
+    public static final int RESPONSE_INTERNAL_SERVER_ERROR = 500;
+
+    public static final int ROWS_PER_PAGE = 20;
 
 }
